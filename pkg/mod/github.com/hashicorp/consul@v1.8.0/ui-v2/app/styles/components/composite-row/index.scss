@@ -1,0 +1,15 @@
+@import './layout';
+@import './skin';
+%with-composite-row-intent:hover,
+%with-composite-row-intent:focus,
+%with-composite-row-intent:active {
+  @extend %composite-row-intent;
+}
+%composite-row > a,
+%composite-row > p,
+%composite-row > li > * {
+  @extend %composite-row-header;
+}
+%composite-row > ul {
+  @extend %composite-row-detail;
+}

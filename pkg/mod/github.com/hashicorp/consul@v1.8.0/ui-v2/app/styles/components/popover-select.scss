@@ -1,0 +1,17 @@
+.popover-select {
+  @extend %popover-select;
+}
+%popover-select {
+  @extend %with-popover-menu;
+}
+%popover-select label > * {
+  @extend %split-button, %sort-button;
+}
+%popover-select {
+  z-index: 3;
+  padding-left: 12px;
+  height: 100%;
+}
+%popover-select label {
+  border-right: none !important;
+}

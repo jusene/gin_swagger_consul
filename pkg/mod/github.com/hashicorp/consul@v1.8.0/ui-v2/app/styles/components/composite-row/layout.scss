@@ -1,0 +1,66 @@
+%composite-row {
+  display: block;
+  box-sizing: border-box;
+  padding: 12px;
+  padding-right: 0;
+  border: 1px solid;
+}
+%composite-row-header {
+  margin-bottom: 0 !important;
+}
+%composite-row-intent {
+  border: 1px solid;
+  position: relative;
+}
+%composite-row-detail {
+  display: flex;
+  flex-wrap: nowrap;
+}
+%composite-row-detail * {
+  white-space: nowrap;
+}
+%composite-row-detail > li {
+  margin-right: 12px;
+}
+%composite-row-detail .node::before {
+  margin-top: 2px;
+}
+
+//Health Checks
+%composite-row > li > span.passing::before,
+%composite-row > li > span.warning::before,
+%composite-row > li > span.critical::before,
+%composite-row > li > span.empty::before {
+  height: 18px;
+  width: 18px;
+  margin-top: 2px;
+}
+
+// Copy Button with Feedback
+%composite-row .copy-button button {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+%composite-row-detail .copy-button {
+  margin-left: 4px;
+}
+%composite-row-header .copy-button {
+  top: 3px;
+}
+%composite-row-header .copy-button,
+%composite-row-detail .copy-button {
+  display: none;
+}
+%composite-row-header:hover .copy-button,
+%composite-row-detail:hover .copy-button {
+  display: inline-flex;
+}
+
+// Tooltip
+%composite-row-detail .feedback-dialog-out {
+  left: -12px;
+  bottom: 12px;
+}
+%composite-row-detail .feedback-dialog-out::after {
+  left: 18px;
+}

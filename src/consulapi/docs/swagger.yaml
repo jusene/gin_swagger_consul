@@ -1,0 +1,87 @@
+definitions:
+  model.Err:
+    properties:
+      code:
+        type: integer
+      msg:
+        type: string
+    type: object
+  model.Register:
+    properties:
+      address:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      port:
+        type: integer
+    type: object
+  model.Res:
+    properties:
+      code:
+        type: integer
+      msg:
+        type: string
+    type: object
+info:
+  contact: {}
+  description: Consul API For Register and Deregister
+  license: {}
+  title: Consul Service Api
+  version: "1.0"
+paths:
+  /consul:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: service
+        in: body
+        name: service
+        required: true
+        schema:
+          $ref: '#/definitions/model.Register'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Res'
+        "405":
+          description: Method Not Allowed
+          schema:
+            $ref: '#/definitions/model.Err'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/model.Err'
+      summary: Register Consul Server
+      tags:
+      - Service
+  /consul/{id}:
+    delete:
+      consumes:
+      - application/json
+      parameters:
+      - description: service
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Res'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/model.Err'
+      summary: Deregister Consul Server
+      tags:
+      - Service
+swagger: "2.0"
