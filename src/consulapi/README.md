@@ -1,12 +1,12 @@
 ## 打包
 
-```shell script
+```bash
 make all
 ```
 
 ## 封装不同的架构的Docker
 
-```shell script
+```bash
 FROM scratch
 
 WORKDIR /
@@ -17,7 +17,7 @@ CMD ["/consulapi"]
 
 ## k8s运行
 
-```shell script
+```yaml
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -81,4 +81,10 @@ spec:
         backend:
           serviceName: consulapi
           servicePort: 8080
+```
+
+## 访问地址
+
+```bash
+http://consulapi.sysadmin.com/swagger/index.html
 ```
