@@ -120,7 +120,7 @@
     "loader.js": "^4.7.0",
     "mnemonist": "^0.30.0",
     "ngraph.graph": "^18.0.3",
-    "node-sass": "^4.9.3",
+    "node-sass": "^7.0.0",
     "pretender": "^3.2.0",
     "prettier": "^1.10.2",
     "qunit-dom": "^1.0.0",
